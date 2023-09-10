@@ -80,7 +80,7 @@ jobs:
       if: ${{ github.ref == 'refs/heads/main'}}
       run: |
         tag=${{needs.CI.outputs.new_tag}}
-        sed -i "s|davidalkobi/nodeapp*|davidalkobi/nodeapp:$tag|" deploy-app.yaml
+        sed -i "s|davidalkobi/nodeapp:.*|davidalkobi/nodeapp:$tag|" deploy-app.yaml
         git config --global user.email "davidalk3@gmail.com"
         git config --global user.name "github actions"
         git add deploy-app.yaml
