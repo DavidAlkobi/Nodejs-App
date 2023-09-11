@@ -1,7 +1,8 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const request = require('supertest');
-const app = require('../app'); // Assuming your app is in a file named app.js
+const app = require('../server'); // Assuming your app is in a file named server.js
+
 
 describe('Express App Tests', function () {
   describe('GET /', function () {
