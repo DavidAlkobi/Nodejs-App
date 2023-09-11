@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-  });
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 app.get('/profile-picture', function (req, res) {
   let img = fs.readFileSync(path.join(__dirname, "images/profile-1.jpg"));
@@ -47,18 +47,16 @@ app.post('/update-profile', function (req, res) {
     let myquery = { userid: 1 };
     let newvalues = { $set: userObj };
 
-    db.collection("users").updateOne(myquery, newvalues, {upsert: true}, function(err, res) {
-      if (err) throw err;
+    db.collection("users").updateOne(myquery, newvalues, { upsert: true }, function (updateErr, result) {
+      if (updateErr) throw updateErr;
       client.close();
+      // Send response
+      res.send(userObj);
     });
-
   });
-  // Send response
-  res.send(userObj);
 });
 
 app.get('/get-profile', function (req, res) {
-  let response = {};
   // Connect to the db
   MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
     if (err) throw err;
@@ -67,13 +65,12 @@ app.get('/get-profile', function (req, res) {
 
     let myquery = { userid: 1 };
 
-    db.collection("users").findOne(myquery, function (err, result) {
-      if (err) throw err;
-      response = result;
+    db.collection("users").findOne(myquery, function (findErr, result) {
+      if (findErr) throw findErr;
       client.close();
 
       // Send response
-      res.send(response ? response : {});
+      res.send(result ? result : {});
     });
   });
 });
@@ -81,4 +78,3 @@ app.get('/get-profile', function (req, res) {
 app.listen(5000, function () {
   console.log("app listening on port 5000!");
 });
-
