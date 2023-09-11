@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha './app/**/*.test.js'",
+    "test": "mocha './test/**/*.test.js'",
     "start": "node server.js"
   },
   "author": "David Alkobi",
