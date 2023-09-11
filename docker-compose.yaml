@@ -1,9 +1,9 @@
 version: '3'
 services:
-   my-app:
-     image: nodejs:test
-     ports:
-      - 3000:3000
+  my-app:
+    image: nodejs:test
+    ports:
+    - 3000:3000
   mongodb:
     image: mongo
     ports:
