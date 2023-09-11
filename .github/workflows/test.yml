@@ -1,9 +1,6 @@
 name: Node.js Test
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - 'main'
       
 jobs:
   build:
@@ -24,6 +21,6 @@ jobs:
 
     - name: Run tests
       run: npm test
-      
+      working-directory: ./app
 
   
