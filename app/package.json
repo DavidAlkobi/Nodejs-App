@@ -15,7 +15,7 @@
     "mongodb": "^3.3.3"
   },
   "devDependencies": {
-    "mocha": "^x.x.x"  
+    "mocha": "10.2.0"  
   }
 }
 
