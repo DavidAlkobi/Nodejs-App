@@ -1,31 +1,30 @@
 name: Node.js Test
+
 on:
   workflow_dispatch:
-      
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-   - name: Build the Docker image
-     id: build
-      run: |
-       docker build -t nodejs:test .
-       docker compose up -d 
+      - name: Build the Docker image
+        id: build
+        run: |
+          docker build -t nodejs:test .
+          docker compose up -d
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm install
-      working-directory: ./app
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./app
 
-    - name: Run tests
-      run: npm test
-      working-directory: ./app
-
-  
+      - name: Run tests
+        run: npm test
+        working-directory: ./app
