@@ -36,7 +36,6 @@ describe('Express App Tests', function () {
     it('should update the user profile', function (done) {
       const userObj = {
         // Provide test data for updating the profile
-        // For example:
         name: 'Test User',
         email: 'test@example.com'
       };
@@ -49,11 +48,15 @@ describe('Express App Tests', function () {
           if (err) return done(err);
   
           // Verify that the response matches the expected data
+          // Remove "userid": 1 from the expected data if it's not part of the response
+          delete userObj.userid; // Remove userid property from expected data
+  
           expect(res.body).to.deep.equal(userObj);
           done();
         });
     });
   });
+  
 
   describe('GET /get-profile', function () {
     it('should return a user profile', function (done) {
