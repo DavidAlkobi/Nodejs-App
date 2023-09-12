@@ -35,26 +35,7 @@ let mongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 // "user-account" in demo with docker. "my-db" in demo with docker-compose
 let databaseName = "my-db";
 
-app.post('/update-profile', function (req, res) {
-  let userObj = req.body;
 
-  MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
-    if (err) throw err;
-
-    let db = client.db(databaseName);
-    userObj['userid'] = 1;
-
-    let myquery = { userid: 1 };
-    let newvalues = { $set: userObj };
-
-    db.collection("users").updateOne(myquery, newvalues, { upsert: true }, function (updateErr, result) {
-      if (updateErr) throw updateErr;
-      client.close();
-      // Send response
-      res.send(userObj);
-    });
-  });
-});
 
 app.get('/get-profile', function (req, res) {
   // Connect to the db
