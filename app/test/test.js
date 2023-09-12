@@ -36,16 +36,19 @@ describe('Express App Tests', function () {
     it('should update the user profile', function (done) {
       const userObj = {
         // Provide test data for updating the profile
+        // For example:
+        name: 'Test User',
+        email: 'test@example.com'
       };
-
+  
       request(app)
         .post('/update-profile')
         .send(userObj)
         .expect(200)
         .end(function (err, res) {
           if (err) return done(err);
-
-          // You can add additional assertions to check the response data
+  
+          // Verify that the response matches the expected data
           expect(res.body).to.deep.equal(userObj);
           done();
         });
