@@ -5,6 +5,33 @@ on:
 
 jobs:
 
+ Test:
+   runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build the Docker image
+        id: build
+        run: |
+          docker build -t nodejs:test .
+          docker compose up -d
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./app
+
+      - name: Run tests
+        run |
+         npm test
+         docker compose up
+        working-directory: ./app
+
  CI:
     runs-on: ubuntu-latest
     outputs:
