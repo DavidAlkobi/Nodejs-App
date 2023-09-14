@@ -29,7 +29,7 @@ jobs:
       - name: Run tests
         run |
          npm test
-         docker compose up
+         docker compose down
         working-directory: ./app
 
  CI:
