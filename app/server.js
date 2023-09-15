@@ -39,7 +39,7 @@ let databaseName = "my-db";
 
 app.get('/get-profile', function (req, res) {
   // Connect to the db
-  MongoClient.connect(mongoUrlDockerCompose, mongoClientOptions, function (err, client) {
+  MongoClient.connect(mongoUrlLocal, mongoClientOptions, function (err, client) {
     if (err) throw err;
 
     let db = client.db(databaseName);
@@ -62,4 +62,3 @@ app.listen(5000, function () {
 
 // Export the app instance
 module.exports = app;
-
