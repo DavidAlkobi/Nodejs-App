@@ -4,6 +4,9 @@ services:
     image: nodejs:test
     ports:
     - 5001:5000
+    environment:
+     - MONGO_URL=mongodb://admin:password@mongodb
+    
   mongodb:
     image: mongo
     ports:
@@ -13,6 +16,7 @@ services:
      - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
      - mongo-data:/data/db
+     
   mongo-express:
     image: mongo-express
     restart: always
