@@ -85,9 +85,8 @@ app.get('/get-profile', function (req, res) {
   });
 });
 
-app.listen(5000, function () {
-  console.log("app listening on port 5000!");
-});
-
-// Export the app instance
 module.exports = app;
+
+app.listen(3000, function () {
+  console.log("app listening on port 3000!");
+});
