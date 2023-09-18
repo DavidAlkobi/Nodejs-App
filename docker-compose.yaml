@@ -1,7 +1,7 @@
 version: '3'
 services:
   my-app:
-    image: davidalkobi/node:test
+    image: nodejs:test
     ports:
       - 3000:3000
     environment:
