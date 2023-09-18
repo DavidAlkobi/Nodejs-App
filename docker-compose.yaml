@@ -3,7 +3,7 @@ services:
   my-app:
     image: nodejs:test
     ports:
-      - 5000:5000
+      - 3001:3000
     environment:
      - MONGO_URL=mongodb://admin:password@mongodb
 
