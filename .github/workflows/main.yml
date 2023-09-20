@@ -111,4 +111,28 @@ jobs:
         git commit -m "update the image tag to test"
         git push origin main
 
+   
+    - name: Deploy to staging
+      uses: medyagh/setup-minikube@master
+    
+    - name: Try the cluster !
+      run: kubectl get pods -A        
+    
+    - name: Deploy to minikube
+      run: |
+        kubectl apply -f .
+        
+    - name: Take a nap
+      run: sleep 30
+    
+    - name: Check pods
+      run: |
+        kubectl get pods
   
+    - name: Test Login To App
+      run: |
+        docker images
+        minikube service list
+        kubectl get pods
+  
+    
