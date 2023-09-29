@@ -4,8 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
- Test:
+ CI:
    runs-on: ubuntu-latest
+   outputs:
+    new_tag: ${{ steps.tag.outputs.new_tag }}
    steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -31,14 +33,6 @@ jobs:
          docker compose down
         working-directory: ./app
 
- CI:
-    runs-on: ubuntu-latest
-    outputs:
-      new_tag: ${{ steps.tag.outputs.new_tag }}
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       # - name: Run Super-Linter.
       #   uses: super-linter/super-linter@v5
       #   env:
@@ -60,7 +54,6 @@ jobs:
 
       - name: Bump version and push tag
         id: tag
-        # Will be changed to master soon
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: anothrNick/github-tag-action@1.61.0
         env:
@@ -69,15 +62,6 @@ jobs:
           DEFAULT_BUMP: patch
           INITIAL_VERSION: 1.0.0
           DEFAULT_BRANCH: main
-
-      - name: Declare some variables
-        id: tag2
-        shell: bash
-        run: |
-          echo "sha_short=$(git rev-parse --short "$GITHUB_SHA")" >> "$GITHUB_ENV"
-          echo "new_tag=$sha_short" >> $GITHUB_OUTPUT
-          echo "$sha_short"
-
       -
         name: Build and push
         uses: docker/build-push-action@v4
