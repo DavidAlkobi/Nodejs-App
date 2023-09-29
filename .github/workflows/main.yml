@@ -105,6 +105,8 @@ jobs:
     
     - name: Deploy to minikube
       run: |
+        ls
+        pwd
         kubectl apply -f .
         
     - name: Take a nap
