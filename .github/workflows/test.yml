@@ -4,30 +4,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+    - name: clone the gitops repo
+      id: clone-the-gitops-repo
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.access_token}}
+        repository: DavidAlkobi/Infra_Nodejs
+        ref: main
 
-      - name: Build the Docker image
-        id: build
-        run: |
-          docker build -t nodejs:test .
-          docker compose up -d
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./app
-
-      - name: Run tests
-        run: |
-         npm test
-         docker compose down
-        working-directory: ./app
+    - name: do some gitops
+      id: update-the-gitops-repo
+      if: ${{ github.ref == 'refs/heads/main'}}
+      run: |
+        cd k8s
+        tag=test123
+        sed -i "s|davidalkobi/nodeapp:.*|davidalkobi/nodeapp:$tag|" deploy-app.yaml
+        git config --global user.email "davidalk3@gmail.com"
+        git config --global user.name "github actions"
+        git add deploy-app.yaml
+        git commit -m "update the image tag to test"
+        git push origin main
 
