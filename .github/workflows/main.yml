@@ -103,6 +103,7 @@ jobs:
       id: update-the-gitops-repo
       if: ${{ github.ref == 'refs/heads/main'}}
       run: |
+        cd k8s
         tag=${{needs.CI.outputs.new_tag}}
         sed -i "s|davidalkobi/nodeapp:.*|davidalkobi/nodeapp:$tag|" deploy-app.yaml
         git config --global user.email "davidalk3@gmail.com"
