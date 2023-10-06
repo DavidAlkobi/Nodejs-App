@@ -116,10 +116,6 @@ jobs:
       run: |
         kubectl get pods
   
-    - name: Test Login To App
-      run: |
-        docker images
-        minikube service list
-        kubectl get pods
+    
   
     
