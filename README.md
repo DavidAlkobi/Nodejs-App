@@ -6,7 +6,7 @@ This is a DevOps portfolio project that demonstrates the entire software develop
 
 ### Project Repos
 Source Code
-infrastructure & Gitops [https://github.com/DavidAlkobi/Infra_Nodejs]
+infrastructure & Gitops ([https://github.com/DavidAlkobi/Infra_Nodejs])
 GitOps
 Project Details
 The project employs various technologies and methodologies:
