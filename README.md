@@ -1,3 +1,5 @@
+<img width="148" alt="image" src="https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/e9f97dbb-8263-431f-9f6d-e87cebea6fb6">
+
 ### Architecture
 ![FinalProject drawio](https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/3c45eebd-8dd8-4500-ba00-95bbd227b0b5)
 
