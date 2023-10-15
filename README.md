@@ -6,9 +6,9 @@ This is a DevOps portfolio project that demonstrates the entire software develop
 
 ### Project Repos
 Source Code
-infrastructure & Gitops ([https://github.com/DavidAlkobi/Infra_Nodejs])
-GitOps
-Project Details
+infrastructure & Gitops (https://github.com/DavidAlkobi/Infra_Nodejs)
+
+###Project Details
 The project employs various technologies and methodologies:
 Front-end: Bootstrap, CSS, HTML, and jQuery are used for developing the website's front-end.
 Back-end: Flask is used to create a REST API to connect with the website's front-end.
