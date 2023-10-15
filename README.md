@@ -1,7 +1,3 @@
-### Application front-end
-<img width="624" alt="צילום מסך 2023-10-15 135406" src="https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/aed45343-252a-4cf4-9935-805c4f28898c">
-
-
 ### Architecture
 ![FinalProject drawio](https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/3c45eebd-8dd8-4500-ba00-95bbd227b0b5)
 
@@ -27,5 +23,7 @@ The project employs various technologies and methodologies:
 - main is the production branch
 - feature are developed on feateure/* branches
 
+### Application front-end
+<img width="624" alt="צילום מסך 2023-10-15 135406" src="https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/aed45343-252a-4cf4-9935-805c4f28898c">
 
 
