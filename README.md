@@ -5,8 +5,8 @@
 This is a DevOps portfolio project that demonstrates the entire software development process, from ideation to continuous integration and delivery, by effectively implementing DevOps methodologies. It highlights the importance of DevOps practices in software development.
 
 ### Project Repos
-[Source Code](https://github.com/DavidAlkobi/Nodejs-App)
-[infrastructure & Gitops](https://github.com/DavidAlkobi/Infra_Nodejs)
+- [Source Code](https://github.com/DavidAlkobi/Nodejs-App)
+- [infrastructure & Gitops](https://github.com/DavidAlkobi/Infra_Nodejs)
 
 
 
