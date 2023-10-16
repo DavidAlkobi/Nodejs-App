@@ -1,5 +1,6 @@
 ### Architecture
-![FinalProject drawio](https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/3c45eebd-8dd8-4500-ba00-95bbd227b0b5)
+![FinalProject drawio](https://github.com/DavidAlkobi/Nodejs-App/assets/136454939/55dea789-9f49-4bee-b31d-c9eb8a97590e)
+
 
 ### Devops Protfilio
 This is a DevOps portfolio project that demonstrates the entire software development process, from ideation to continuous integration and delivery, by effectively implementing DevOps methodologies. It highlights the importance of DevOps practices in software development.
