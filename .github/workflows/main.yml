@@ -7,7 +7,7 @@ on:
       - closed
   push:
     paths:
-      - './app/**.js'
+      - '../../app/**.js'
     
 
 jobs:
