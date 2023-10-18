@@ -1,15 +1,11 @@
 name: CI/CD 
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-    paths:
-      - '../../app/**.js'
 
     
-
 jobs:
  CI:
    runs-on: ubuntu-latest
