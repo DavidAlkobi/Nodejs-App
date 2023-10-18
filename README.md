@@ -4,6 +4,8 @@
 
 ### Devops Protfilio
 This is a DevOps portfolio project that demonstrates the entire software development process, from ideation to continuous integration and delivery, by effectively implementing DevOps methodologies. It highlights the importance of DevOps practices in software development.
+### Project Book
+For wide explanation about DevOps and this project in general please refer to:
 [Project Book](./Final%20Project%20Description.pdf)
 
 
