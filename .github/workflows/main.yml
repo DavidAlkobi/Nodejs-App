@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '../../app/**.js'
-  workflow_dispatch:
 
     
 jobs:
