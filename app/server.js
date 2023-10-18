@@ -20,7 +20,7 @@ app.get('/profile-picture', function (req, res) {
 
 let mongoUrl = "mongodb://admin:password@localhost:27017";
 
-// Check if an environment variable for MongoDB URL is set
+// Check if an environment variable for MongoDB URL is set.
 if (process.env.MONGO_URL) {
   mongoUrl = process.env.MONGO_URL;
 }
