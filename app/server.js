@@ -28,7 +28,7 @@ if (process.env.MONGO_URL) {
 // use when starting application locally with node command
 let mongoUrlLocal = "mongodb://admin:password@localhost:27017";
 
-// use when starting application as a separate docker container
+// use when starting application as a separate docker container.
 let mongoUrlDocker = "mongodb://admin:password@host.docker.internal:27017";
 
 // use when starting application as docker container, part of docker-compose
